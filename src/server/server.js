@@ -1,6 +1,7 @@
 import express from "express";
 import { port } from "./config";
 import path from "path";
+
 import { serverRender } from "../renderers/server";
 
 import TEST_DATA from "../test-data.json";
@@ -11,10 +12,9 @@ server.use(express.static("dist"));
 server.set("views", path.join(__dirname, "views"));
 server.set("view engine", "ejs");
 
-const initialContent = serverRender();
-
-server.get("/", (req, res) => {
-  res.render("index", { initialContent });
+server.get("/", async (req, res) => {
+  const { initialContent, initialState } = await serverRender();
+  res.render("index", { initialContent, initialState });
 });
 
 server.get("/data", (req, res) => {

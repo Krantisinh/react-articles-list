@@ -26,8 +26,7 @@ const articleStyle = {
 };
 
 export const Article = (props) => {
-  const { article, actions } = props;
-  const author = actions.getArticleAuthor(article.id);
+  const { article, author } = props;
 
   return (
     <div style={articleStyle.container}>

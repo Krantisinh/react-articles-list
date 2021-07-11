@@ -2,5 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "../app";
+import { Store } from "../store";
 
-ReactDOM.hydrate(<App></App>, document.getElementById("root"));
+const store = new Store(window.initialState);
+
+ReactDOM.render(<App store={store}></App>, document.getElementById("root"));
