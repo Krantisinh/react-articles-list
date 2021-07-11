@@ -3,3 +3,5 @@ export const mapArrayToObjects = (data) =>
     acc[x.id] = x;
     return acc;
   }, {});
+
+export const toDateString = (date) => new Date(date).toDateString();

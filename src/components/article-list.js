@@ -1,18 +1,14 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { Article } from "./article";
-import { DataApi } from "../data-api";
-import * as TEST_DATA from "../test-data.json";
 
-const dataApi = new DataApi(TEST_DATA);
-const articles = dataApi.getArticles();
-
-export const ArticleList = () => {
+export const ArticleList = (props) => {
   return (
     <div>
-      {Object.keys(articles).map((id) => (
+      {Object.keys(props.articles).map((id) => (
         <Article
-          article={dataApi.getArticle(id)}
-          author={dataApi.getArticleAuthor(id)}
+          article={props.articles[id]}
+          actions={props.actions}
           key={id}
         />
       ))}

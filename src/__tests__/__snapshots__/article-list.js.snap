@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article List should mount 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "border": "1px solid #ccc",
+        "display": "flex",
+        "flexDirection": "column",
+        "fontFamily": "Verdana, Arial, Helvetica, sans-serif",
+        "marginBottom": "1.5rem",
+        "padding": "1rem",
+      }
+    }
+  >
+    <h2 />
+    <div
+      style={
+        Object {
+          "color": "gray",
+          "fontSize": "0.75rem",
+          "marginBottom": "0.5rem",
+        }
+      }
+    >
+      Invalid Date
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": "1rem",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "fontWeight": "bold",
+          "textAlign": "end",
+        }
+      }
+    >
+      -
+       
+      <a>
+        undefined undefined
+      </a>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "border": "1px solid #ccc",
+        "display": "flex",
+        "flexDirection": "column",
+        "fontFamily": "Verdana, Arial, Helvetica, sans-serif",
+        "marginBottom": "1.5rem",
+        "padding": "1rem",
+      }
+    }
+  >
+    <h2 />
+    <div
+      style={
+        Object {
+          "color": "gray",
+          "fontSize": "0.75rem",
+          "marginBottom": "0.5rem",
+        }
+      }
+    >
+      Invalid Date
+    </div>
+    <div
+      style={
+        Object {
+          "marginBottom": "1rem",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "fontWeight": "bold",
+          "textAlign": "end",
+        }
+      }
+    >
+      -
+       
+      <a>
+        undefined undefined
+      </a>
+    </div>
+  </div>
+</div>
+`;
