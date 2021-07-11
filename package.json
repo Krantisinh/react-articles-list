@@ -2,7 +2,7 @@
   "name": "react-advanced",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/renderes/client.js",
   "scripts": {
     "dev:server": "nodemon --exec babel-node src/server/server.js --ignore dist/",
     "start": "webpack -w --mode=development",
