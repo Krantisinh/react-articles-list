@@ -3,6 +3,8 @@ import { port } from "./config";
 import path from "path";
 import { serverRender } from "../renderers/server";
 
+import TEST_DATA from "../test-data.json";
+
 const server = express();
 server.use(express.static("dist"));
 
@@ -13,6 +15,10 @@ const initialContent = serverRender();
 
 server.get("/", (req, res) => {
   res.render("index", { initialContent });
+});
+
+server.get("/data", (req, res) => {
+  res.send(TEST_DATA);
 });
 
 server.listen(port, () => console.info(`Running on port: ${port}`));

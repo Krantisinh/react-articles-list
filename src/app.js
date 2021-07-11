@@ -1,11 +1,29 @@
-import React from "react";
-import { ArticleList } from "./components/article-list";
+import React, { useEffect, useState } from "react";
 
+import { ArticleList } from "./components/article-list";
 import { DataApi } from "./data-api";
-import * as TEST_DATA from "./test-data.json";
 
 export default function App() {
-  const dataApi = new DataApi(TEST_DATA);
+  const initialState = {
+    articles: [],
+    authors: [],
+  };
+  const [data, setData] = useState(initialState);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch("/data").then((x) => x.json());
+
+      console.log(data);
+
+      setData(data);
+    };
+
+    fetchData();
+  }, []);
+
+  const dataApi = new DataApi(data);
+
   const articles = dataApi.getArticles();
 
   const getArticleAuthor = (articleId) => dataApi.getArticleAuthor(articleId);
