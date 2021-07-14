@@ -1,6 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import { toDateString } from "../util";
+
+import PropTypes from "prop-types";
 
 const articleStyle = {
   container: {
@@ -39,4 +40,17 @@ export const Article = (props) => {
       </div>
     </div>
   );
+};
+
+Article.propTypes = {
+  article: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+  }),
+  author: PropTypes.shape({
+    website: PropTypes.string.isRequired,
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+  }),
 };

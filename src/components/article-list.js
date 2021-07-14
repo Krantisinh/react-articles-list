@@ -1,6 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import { Article } from "./article";
+
+import PropTypes from "prop-types";
 
 export const ArticleList = (props) => {
   const { articles } = props.store.getState();
@@ -15,4 +16,8 @@ export const ArticleList = (props) => {
       ))}
     </div>
   );
+};
+
+ArticleList.propTypes = {
+  store: PropTypes.object,
 };

@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from "react";
+import PropTypes from "prop-types";
 
 import { ArticleList } from "./components/article-list";
 
@@ -12,3 +12,7 @@ export default function App(props) {
     </div>
   );
 }
+
+App.propTypes = {
+  store: PropTypes.object,
+};
