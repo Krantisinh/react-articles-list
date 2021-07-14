@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "../app";
-import { Store } from "../store";
+import Store from "../state/store";
 
 const store = new Store(window.initialState);
 

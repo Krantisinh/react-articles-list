@@ -4,7 +4,8 @@ import axios from "axios";
 
 import App from "../app";
 import config from "../server/config";
-import { Store } from "../store";
+
+import Store from "../state/store";
 
 export const serverRender = async () => {
   const data = await axios

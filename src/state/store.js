@@ -1,6 +1,6 @@
-import { mapArrayToObjects } from "./util";
+import { mapArrayToObjects } from "../util";
 
-export class Store {
+export default class Store {
   constructor(rawData) {
     this.state = {
       articles: mapArrayToObjects(rawData.articles),
