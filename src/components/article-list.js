@@ -4,16 +4,15 @@ import { Article } from "./article";
 import PropTypes from "prop-types";
 import { StoreContext } from "../state/context";
 
-export const ArticleList = () => {
+export const ArticleList = (props) => {
   const context = useContext(StoreContext);
-  const state = context.getState();
 
   return (
     <div>
-      {Object.keys(state.articles).map((id) => (
+      {Object.keys(props.articles).map((id) => (
         <Article
-          article={state.articles[id]}
-          author={context.getAuthor(state.articles[id].authorId)}
+          article={props.articles[id]}
+          author={context.getAuthor(props.articles[id].authorId)}
           key={id}
         />
       ))}
@@ -22,8 +21,5 @@ export const ArticleList = () => {
 };
 
 ArticleList.propTypes = {
-  state: PropTypes.shape({
-    articles: PropTypes.Object,
-    getAuthor: PropTypes.func,
-  }),
+  articles: PropTypes.object,
 };
