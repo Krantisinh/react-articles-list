@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import { ArticleList } from "./components/article-list";
+import { ArticleListM } from "./components/article-list";
 import { StoreContext } from "./state/context";
-import { Search } from "./components/search";
+import { SearchM } from "./components/search";
 
 export default function App(props) {
   const [state, setState] = useState(props.store.getState());
@@ -27,8 +27,8 @@ export default function App(props) {
       <h1>Articles</h1>
 
       <StoreContext.Provider value={props.store}>
-        <Search onSearch={onSearch}></Search>
-        <ArticleList articles={state.matchingArticles}></ArticleList>
+        <SearchM onSearch={onSearch}></SearchM>
+        <ArticleListM articles={state.matchingArticles}></ArticleListM>
       </StoreContext.Provider>
     </div>
   );

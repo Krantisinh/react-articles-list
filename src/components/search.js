@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 
 import PropTypes from "prop-types";
 
@@ -8,7 +8,7 @@ const SearchStyle = {
   },
 };
 
-export const Search = (props) => {
+const Search = (props) => {
   const [value, setValue] = useState("");
 
   const handleInput = (event) => {
@@ -27,3 +27,5 @@ export const Search = (props) => {
 Search.propTypes = {
   onSearch: PropTypes.func,
 };
+
+export const SearchM = memo(Search);

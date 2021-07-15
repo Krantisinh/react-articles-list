@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
-import { Article } from "./article";
+import React, { memo, useContext } from "react";
+import { ArticleM } from "./article";
 
 import PropTypes from "prop-types";
 import { StoreContext } from "../state/context";
 
-export const ArticleList = (props) => {
+const ArticleList = (props) => {
   const context = useContext(StoreContext);
 
   return (
     <div>
       {Object.keys(props.articles).map((id) => (
-        <Article
+        <ArticleM
           article={props.articles[id]}
           author={context.getAuthor(props.articles[id].authorId)}
           key={id}
@@ -19,6 +19,8 @@ export const ArticleList = (props) => {
     </div>
   );
 };
+
+export const ArticleListM = memo(ArticleList);
 
 ArticleList.propTypes = {
   articles: PropTypes.object,

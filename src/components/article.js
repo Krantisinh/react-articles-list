@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { toDateString } from "../util";
 
 import PropTypes from "prop-types";
@@ -26,7 +26,7 @@ const articleStyle = {
   },
 };
 
-export const Article = (props) => {
+const Article = (props) => {
   const { article, author } = props;
 
   return (
@@ -41,6 +41,8 @@ export const Article = (props) => {
     </div>
   );
 };
+
+export const ArticleM = memo(Article);
 
 Article.propTypes = {
   article: PropTypes.shape({
